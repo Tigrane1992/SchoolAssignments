@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nb" >
+    <head>
+        <title>Oblig4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<body>
+    <header class="bannerhead">
+        <figure class="bannerimage">
+            <h1 class="bannertitle"> Oblig 4</h1>
+        </figure>
+            <nav class="navmenu">
+                <a href="./oppgave1oblig4.html">Op1</a>
+                <a href="./oppgave2oblig4.html">Op2</a>
+                <a href="./oppgave3oblig4.html">Op3</a>
+                <a href="./oppgave4oblig4.html">Op4</a>
+                <a href="./oppgave5oblig4lokker.html">Op5</a>
+                <a href="./oppgave6oblig4.html">Op6</a>
+                <a href="./oppgave7oblig4.html">Op7</a>
+                <a href="./oppgave8oblig4.html">Op8</a>
+                <a href="./oppgave9oblig4.html">Op9</a>
+            </nav>
+    </header>
+<script>
+    
+    window.onload = oppstart;
+    var array1 = { A:"Dum",B:"Mistenksom",C:"Adelig",D:"Plagsom",E:"Mannlig",F:"Kjære",G:"Møkkete",H:"Malmert",I:"Aktiv",K:"Dyr",J:"Effektiv",
+                  L:"Enorm",M:"Fargerik",N:"Fersk",O:"Fin",P:"Fjern",Q:"Flott",R:"Folksom",S:"Fornøyd",T:"Full",U:"Globale",V:"Gul",W:"Purrende",
+                  X:"Hard",Y:"Hjelpsom",Æ:"Hvit",Ø:"Høy",Å:"Håpløs",Z:"Klar"};
+    
+    var array2 = {A:"Korn",B:"Katt",C:"Løve",D:"Drue",E:"Pjusk",F:"Prest",G:"Betjent",H:"Karius",I:"Satan",K:"Jesus",J:"Høne",
+                  L:"Panne",M:"Hud",N:"Negl",O:"Fisk",P:"Idiot",Q:"Slummert",R:"Reinert",S:"Elefant",T:"Alkis",U:"Promp",V:"Rally",W:"Fascist",
+                  X:"Benk",Y:"Senk",Æ:"Dass",Ø:"Pappegøye",Å:"Sabel",Z:"Tann"};
+    
+    
+    var array3 = {A:"Melk",B:"Bjørnefett",C:"Såpe",D:"Eskrement",E:"Vann",F:"Pizza",G:"Grønnsak",H:"Ost",I:"Piss",K:"Vin",J:"Øl",
+                  L:"Spill",M:"Kokain",N:"Escobar",O:"Mjølnir",P:"Troll",Q:"Dronning",R:"Drill",S:"Granat",T:"Panser",U:"Vogn",V:"Mursten",W:"Nazi",
+                  X:"Opera",Y:"Regn",Æ:"Snø",Ø:"Gulv",Å:"Tyggegummi",Z:"Lastebil"};
+    
+    function oppstart(){
+        document.getElementById("buttonsjekk").onclick = drive;
+    }
+    
+    function drive(){
+        var navnInput = document.getElementById("navn").value; // lager inputfelt verdien skal beregnes. 
+        var etterNavnInput = document.getElementById("etternavn").value;
+        var førstenavn = navnInput[0].toUpperCase(); // setter førstenavnet lik inputen av første bokstav og endrer til uppercase for at det ikke skal være feil dersom man skriver små bokstaver
+        var etternavn1 = etterNavnInput[0].toUpperCase();// gjør det samme med etternavn. 
+        var etternavn2 = etterNavnInput[etterNavnInput.length-1].toUpperCase();//setter etternavn2 = lengden til arrayen-1 for å få den siste bokstaven i inputfeltet.
+        document.getElementById("utskrift1").innerHTML = array1[førstenavn] + " " +  array2[etternavn1] + array3[etternavn2]; // skriver ut resultatet.
+    }
+    
+</script>
+    <input id="navn" placeholder="Navn"/>
+    <input id="etternavn" placeholder="Etternavn"/>
+    <button id="buttonsjekk">Generer kallenavn</button>
+    <p>Ditt kallenavn er:</p>
+    <p id="utskrift1"></p>
+</body>
+</html>

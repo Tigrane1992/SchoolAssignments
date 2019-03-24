@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="nb" >
+    <head>
+        <title>Oblig4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<body>
+    <header class="bannerhead">
+        <figure class="bannerimage">
+            <h1 class="bannertitle"> Oblig 4</h1>
+        </figure>
+            <nav class="navmenu">
+                <a href="./oppgave1oblig4.html">Op1</a>
+                <a href="./oppgave2oblig4.html">Op2</a>
+                <a href="./oppgave3oblig4.html">Op3</a>
+                <a href="./oppgave4oblig4.html">Op4</a>
+                <a href="./oppgave5oblig4lokker.html">Op5</a>
+                <a href="./oppgave6oblig4.html">Op6</a>
+                <a href="./oppgave7oblig4.html">Op7</a>
+                <a href="./oppgave8oblig4.html">Op8</a>
+                <a href="./oppgave9oblig4.html">Op9</a>
+            </nav>
+    </header>
+<script>
+window.onload = oppstart;
+var array = [1,2,4,3,20,56,34]
+var array2 = [1,2,4,3,20,56,34]
+
+    function oppstart() { 
+        partall(9);
+        arraysum(array2);
+        sammeSum(array,array2);
+
+    }
+    
+    function partall(tall) { // dersom tallet gir 0 i retur er det ett partall: 
+
+        if(tall % 2 === 0){
+            document.getElementById("utskrift").innerHTML = "tallet " + tall + " er et partall";
+        }
+        else{
+            document.getElementById("utskrift").innerHTML = "tallet " + tall + " er ikke et partall";
+        }
+    }
+    
+    function arraysum(liste){ // lager en variabel for summen og bruker en løkke som teller lengden til listen.
+        var sum = 0;
+        for(var i = 0; i < liste.length; i++){
+            sum += liste[i]; //tallet fra listen skal legges til i summen for hver gang.
+            document.getElementById("utskrift2").innerHTML = sum; //resultat av summen av listeverdiene.
+        }
+         return sum;   
+    }
+       
+    function sammeSum(liste1,liste2){ // dersom elementene i listene er like skal utskrift være true
+        if(arraysum(liste1) === arraysum(liste2)){
+            document.getElementById("utskrift3").innerHTML = "summen av arrayene er like";
+        }
+        else{ // hvis ikke er de false og dermed ikke like.
+            document.getElementById("utskrift4").innerHTML =" summen av arrayene er ikke like";
+        }
+    }            
+
+</script>
+
+    <p id="utskrift"></p>
+    <p>Sum av array:</p>
+    <p id="utskrift2"></p>
+    <p>Samme sum eller ikke:</p>
+    <p id="utskrift3"></p>
+    <p id="utskrift4"></p>
+</body>
+
+</html>

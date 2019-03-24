@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oblig 2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale 1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+        <style>
+        .utskrifter{
+            display:contain;
+            position:relative;
+            font-family:orbitron;
+            font-size:20px;
+            text-anchor: inherit;
+        }
+        
+        </style>
+    </head>
+<header>
+<div class="bannerimage">
+    <h1 class="bannertitle">Oblig 2 INF-PROG </h1>
+</div>
+    <nav>
+        <ul>
+          <li><a href="./Oppgave1_3.html">Oppgave1,2,3</a></li>
+          <li><a href="./Oppgave4.html">Oppgave 4</a></li>
+          <li><a href="./Oppgave5.html">Oppgave 5</a></li>
+          <li><a href="./Oppgave6.html">Oppgave 6</a></li>
+          <li><a href="./Oppgave7.html">Oppgave 7</a></li>
+        </ul>
+    </nav>
+    </header>
+<script>
+
+window.onload = oppstart;
+    
+ function oppstart() {
+        
+    document.getElementById("btnSjekk").onclick= visTall; //starter funksjonen 
+    
+    }
+    
+    function visTall () {
+        /*forlengs*/
+        var tall1 = 0;
+        while(tall1 < 100){   //sålenge tall1 er under 100 vil denne funksjonen repeteres om og om igjen fram til tall1 er lik 100 da for hver gang loopen repeteres vil den addere 1 til tall1. 
+        document.getElementById("utskrift1").innerHTML += tall1 + ",";
+        tall1++;
+        }
+        if(tall1 =100){ // Når tall1 blir til 100 så vil det printes ut 100. dette gjøres slik at man ikke får et komma etter tallet da det er siste tallet i rekken. 
+            document.getElementById("utskrift1").innerHTML += tall1 + ".";
+        }
+        /*baklengs*/
+        var tall2 =100;
+        
+        while(tall2 > 0) { // samme som øvre bare at denne verdien går nedover fra 100 og til 0. 
+            document.getElementById("utskrift2").innerHTML += tall2 +",";
+            tall2--;
+        }
+        if(tall2 = 0) {
+            document.getElementById("utskrift2").innerHTML += tall2 +".";
+        }
+        /* delelig med 2*/
+        var tall3 = 0;
+        while (tall3 < 100){ 
+            document.getElementById("utskrift3").innerHTML += tall3/2  + ",";
+            tall3++;
+        }
+        if(tall3 = 100) {
+            document.getElementById("utskrift3").innerHTML += tall3/2 +".";
+        }
+        /*delelige med 3 */
+        var tall4 = 0;
+        
+        while(tall4 < 99){ 
+            document.getElementById("utskrift4").innerHTML += tall4 + ",";
+            tall4 += 3; // gjorde dette enkelt  for hver gang et nytt tall legges til så adderes 3 som gjør at det bare er tall delelig med 3 som legges til i rekka. 
+        }
+        if(tall4 = 99){
+            document.getElementById("utskrift4").innerHTML += tall4 +".";
+        }
+        /*partall*/
+        var tall5 = 0; // if statement inne i while for at dersom tallet som blir delt på 2 har 0 i rest så vil det legges til. Hvis ikke så fortsetter loopen om igjen fram til det dukker opp et nytt partall.
+        while(tall5 < 100){ // for alle partall brukes en if statement inne i while statement slik vi får ut bare partallene og oddetallene blir ikke regnet med. 
+            if(tall5 % 2 === 0){
+            document.getElementById("utskrift5").innerHTML += tall5 +",";
+            }
+            tall5++;
+            
+        }
+        if(tall5 = 100){
+            document.getElementById("utskrift5").innerHTML += tall5 +".";
+        }
+        /*oddetall*/
+        var tall6 = 1; // samme funksjonalitet som partall bare at nå er if statement gyldig bare dersom resten etter deling. ikke er lik 0. 
+        while(tall6 < 99){
+            if(tall6 % 2 !== 0){
+            document.getElementById("utskrift6").innerHTML += tall6 +",";
+            }
+            tall6++;
+            
+        }
+        if(tall6 = 99){
+            document.getElementById("utskrift6").innerHTML += tall6 +".";
+        }
+        
+        /* Minus og pluss*/
+        
+        for(var i = 0; i <= 100; i++) //  dette skal da gjelder for de 3 ulike verdiene i = 0; dersom i er mindre eller lik 100 og for hver gang et nytt tall adderes på rekken. skal tallet ganges med -1 
+            if(i % 2 === 0)
+            document.getElementById("utskrift7").innerHTML += i + ","; // hvis tallet som er delelig med 2 gir en rest på 0 skal positiv tall skrives.
+        else {  
+            document.getElementById("utskrift7").innerHTML += i*(-1) +",";  //hvis tall som er delelig med 2 gir rest over 0 skal tallet som skrives ut ganges med -1. og adderes på rekken. 
+        
+        }
+        
+    }
+    
+</script>
+               
+</head>
+<body> 
+    <button id="btnSjekk">Vis tallfølger</button>
+        <section class="utskrifter">
+            forlengs: <p id="utskrift1"></p>
+            baklengs: <p id="utskrift2"></p>
+            Delt på to: <p id="utskrift3"></p>
+            delelige med 3:<p id="utskrift4"></p>
+            Partall: <p id="utskrift5"></p>
+            Oddetall:<p id="utskrift6"></p>
+            Annehvert tall positivt og negativt:<p id="utskrift7"></p>
+        </section>
+</body>
+</html>
+               

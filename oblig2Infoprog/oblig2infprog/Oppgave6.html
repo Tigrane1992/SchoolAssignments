@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oblig2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale 1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<header>
+<div class="bannerimage">
+    <h1 class="bannertitle">Oblig 2 INF-PROG </h1>
+</div>
+    <nav>
+        <ul>
+          <li><a href="./Oppgave1_3.html">Oppgave1,2,3</a></li>
+          <li><a href="./Oppgave4.html">Oppgave 4</a></li>
+          <li><a href="./Oppgave5.html">Oppgave 5</a></li>
+          <li><a href="./Oppgave6.html">Oppgave 6</a></li>
+          <li><a href="./Oppgave7.html">Oppgave 7</a></li>
+        </ul>
+    </nav>
+    </header>
+<script>
+    
+    window.onload = oppstart;
+    
+    
+    function oppstart(){
+    
+    document.getElementById("btnSjekk").onclick = sjekkResultat; 
+    
+        
+    }
+    
+    
+    
+    function sjekkResultat() {
+         
+    var input = document.getElementById("tekstInput").value; 
+    var tall = parseInt(document.getElementById("tallInput").value);
+        
+         
+        for(var i =0; i < tall; i++) { // funksjonen repeteres for hver gang i er mindre enn sekve input tallet. 
+            document.getElementById("utskrift").innerHTML += input + "<br/>"; // skriver ut input med en break for antall ganger det er skrevet tall. 
+            
+            }
+        }
+    
+    </script>
+    
+ </head>
+    <body>
+    Skriv inn: <input type="text" id="tekstInput" placeholder="skriv inn tekst"/>
+    Tall: <input type="text" id="tallInput" placeholder="Tall"/>
+    <button id="btnSjekk">click</button>
+    <p id="utskrift"></p>
+    </body>
+    
+</html>

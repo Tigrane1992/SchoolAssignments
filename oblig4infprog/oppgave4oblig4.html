@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nb" >
+    <head>
+        <title>Oblig4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<body>
+    <header class="bannerhead">
+        <figure class="bannerimage">
+            <h1 class="bannertitle"> Oblig 4</h1>
+        </figure>
+            <nav class="navmenu">
+                <a href="./oppgave1oblig4.html">Op1</a>
+                <a href="./oppgave2oblig4.html">Op2</a>
+                <a href="./oppgave3oblig4.html">Op3</a>
+                <a href="./oppgave4oblig4.html">Op4</a>
+                <a href="./oppgave5oblig4lokker.html">Op5</a>
+                <a href="./oppgave6oblig4.html">Op6</a>
+                <a href="./oppgave7oblig4.html">Op7</a>
+                <a href="./oppgave8oblig4.html">Op8</a>
+                <a href="./oppgave9oblig4.html">Op9</a>
+            </nav>
+    </header>
+<script>
+    window.onload = oppstart;
+        
+        var utskrift = document.getElementById("utskrift1");
+    
+    function oppstart() {
+        var button = document.getElementById("btnsjekk").onclick = submit;
+        
+    }
+    
+    function submit() {
+        
+        var temperatur = parseFloat(document.getElementById("tekstinput1").value); // lager inputfelt og bruker parseFloat for å beregne i desimaler.
+        var vindhastighet = parseFloat(document.getElementById("tekstinput2").value);
+        var vindretning = document.getElementById("tekstinput3").value;
+        var nedbor = parseFloat(document.getElementById("tekstinput4").value);
+        
+        
+        if(temperatur > 1.0 && vindhastighet < 0.6 && nedbor > 1.0){ //lager If else statements ut fra informasjon som skal kunne gi en påstand.
+            document.getElementById("utskrift1").innerHTML = " Det regner og er vindstille ";
+        }
+        else if(temperatur > 1.0 && vindhastighet > 10.0 && vindretning === "NØ"){
+            document.getElementById("utskrift1").innerHTML =" Det blåser " + vindretning + " med en vindhastighet på " + vindhastighet;
+        }
+        else if(temperatur > 1.0 && nedbor >5.0 || temperatur < 1.0 && vindretning === "SØ"){
+            document.getElementById("utskrift1").innerHTML = "Det regner mer enn 5 mm ELLER det er frost og sørøstlig vind";
+        }
+        else if(vindhastighet > 13.9 && vindhastighet < 17.1 || vindhastighet > 32.6){
+            document.getElementById("utskrift1").innerHTML = "Det er kuling (13.9-17.1 m/s) ELLER orkan (over 32.6 m/s)";
+        }
+        else{
+            document.getElementById("utskrift1").innerHTML = "Kan ikke regne ut data... Error 404."
+        }
+        
+    }
+
+</script>
+</head>
+  Temperatur:<input id="tekstinput1" placeholder="f.eks 12.3 // i C"/><br>
+    vindhastighet:<input id="tekstinput2" placeholder="f eks 4.6 // i m/s"/><br>
+     vindretning:<input id="tekstinput3" placeholder="f.eks NØ "/><br>
+     nedbor:<input id="tekstinput4" placeholder="f.eks 3.7 // i antall mm"/><br>
+    <button id="btnsjekk">trykk meg</button>
+    <p id="utskrift1"></p>
+</body>
+
+</html>

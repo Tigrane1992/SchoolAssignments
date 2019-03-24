@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+    
+    window.onload = oppstart;
+    var bokstaver = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z","Æ","Ø","Å"];
+    
+    function oppstart(){
+        for(var i = 0; i < bokstaver.length; i++){
+                 document.getElementById("utskrift").innerHTML += i+(1) + ":" + bokstaver[i].repeat(i+1) + "<br>";
+            } 
+        }
+        
+        
+    
+    
+    
+</script>
+</head>
+<body>
+    <p id="utskrift"></p>
+</body>
+</html>

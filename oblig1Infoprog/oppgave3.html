@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale 1.0">
+    <link rel type="text/css" href="./stilark.css">
+    <link rel="stylesheet" href="./stilark.css">
+    <title>OBLIG 1</title>
+  </head>
+  <h1>Oblig 1 Info-Prog</h1>
+<header>
+  <nav>
+    <ul>
+      <li><a href="oppgave1.html">Oppgave 1</a></li>
+      <li><a href="oppgave2.html">Oppgave 2</a></li>
+      <li><a href="oppgave3.html">Oppgave 3</a></li>
+      <li><a href="oppgave4.html">Oppgave 4</a></li>
+      <li><a href="oppgave5.html">Oppgave 5</a></li>
+      <li><a href="oppgave6.html">Oppgave 6</a></li>
+    </ul>
+  </nav>
+</header>
+      <script>
+            window.onload = oppstart;
+
+            function oppstart () {
+                
+                document.getElementById("btnAdder").onclick = pluss;
+                document.getElementById("btnDel").onclick = dele;
+                document.getElementById("btnMinus").onclick = minus;
+                document.getElementById("btnGanger").onclick = ganger;
+            }
+            function pluss() {
+                var tall1 = parseInt(document.getElementById("tall1").value.replace(",",".")); 
+                var tall2 = parseInt(document.getElementById("tall2").value.replace(",","."));
+                var svar = tall1 + tall2;
+                document.getElementById("utskrift").innerHTML = svar.toFixed(2);
+
+            }
+            function minus() {
+                var tall1 = parseInt(document.getElementById("tall1").value.replace(",",".")); 
+                var tall2 = parseInt(document.getElementById("tall2").value.replace(",","."));
+                var svar = tall1 - tall2;
+                document.getElementById("utskrift").innerHTML = svar.toFixed(2);
+
+            }
+            function ganger() {
+                var tall1 = parseInt(document.getElementById("tall1").value.replace(",",".")); 
+                var tall2 = parseInt(document.getElementById("tall2").value.replace(",","."));
+                var svar = tall1 * tall2;
+                document.getElementById("utskrift").innerHTML = svar.toFixed(2);
+
+            }
+            function dele() {
+                var tall1 = parseInt(document.getElementById("tall1").value.replace(",",".")); 
+                var tall2 = parseInt(document.getElementById("tall2").value.replace(",","."));
+                var svar = tall1 / tall2;
+                document.getElementById("utskrift").innerHTML = svar.toFixed(2);
+
+            }
+       
+          
+          
+     </script>
+    </head>
+        <body>
+            Tall 1:<input id="tall1" type="text"/>
+            <button id="btnAdder" type="button">+</button>
+            <button id="btnDel" type="button">/</button>
+            <button id="btnMinus" type="button">-</button>
+            <button id="btnGanger" type="button">*</button>
+            Tall 2:<input id="tall2" type="text"/>
+            <h1 id="utskrift"></h1>
+        </body>
+
+        <footer>
+            <ul>
+                <li>2018</li>
+                <li>Mattia Lerario</li>
+                <li>mattial@hiof.no</li>
+            </ul>
+        </footer>
+</html>

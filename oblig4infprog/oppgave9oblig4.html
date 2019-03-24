@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nb" >
+    <head>
+        <title>Oblig4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<body>
+    <header class="bannerhead">
+        <figure class="bannerimage">
+            <h1 class="bannertitle"> Oblig 4</h1>
+        </figure>
+            <nav class="navmenu">
+                <a href="./oppgave1oblig4.html">Op1</a>
+                <a href="./oppgave2oblig4.html">Op2</a>
+                <a href="./oppgave3oblig4.html">Op3</a>
+                <a href="./oppgave4oblig4.html">Op4</a>
+                <a href="./oppgave5oblig4lokker.html">Op5</a>
+                <a href="./oppgave6oblig4.html">Op6</a>
+                <a href="./oppgave7oblig4.html">Op7</a>
+                <a href="./oppgave8oblig4.html">Op8</a>
+                <a href="./oppgave9oblig4.html">Op9</a>
+            </nav>
+    </header>
+<script>
+    
+    window.onload = oppstart;
+    
+   var alfabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z"];
+    var liste = ["A","B","C","D","E"];
+  
+    
+    function oppstart(){
+        // teller alfabetet
+        for(var i = 0; i < alfabet.length; i++){
+                for(var j = 0; j < liste.length; j++){ //teller listen
+                    if(alfabet[i] === liste[j]){ // dersom bokstav i alfabet finnes i listen
+                        alfabet.splice(i,1); // skal bokstav fjernes fra alfabet og flytte videre til neste bokstav. 
+                        
+                    }     
+                }          
+        }       
+        document.getElementById("utskrift").innerHTML = alfabet; //skriver ut gjenværende bokstaver i alfabetet etter å ha fjernet de like fra listen. 
+        
+        console.log(alfabet); 
+    }
+        
+</script>
+    <p id="utskrift"></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script>
+window.onload = oppstart;
+    var arraydager = [31,28,31,30,31,31,30,31,30,31,30,31];
+    var arraymaaneder = ["januar","februar","mars","april","mai","juni","juli","august","september","oktober","november","december"];
+function oppstart() {
+    var button = document.getElementById("btnGo").onclick = kalenderfunksjon;
+    var inputfelt = document.getElementById("tekst").value;
+    var resultatinput = " ";
+    
+    }
+    function kalenderfunksjon () {
+
+        resultatinput = parseInt(document.getElementById("tekst").value);
+        document.getElementById("utskrift").innerHTML = "det er " + arraydager[resultatinput-1] + " dager i " + arraymaaneder[resultatinput-1];
+        }
+    
+
+    
+
+    
+
+
+</script>
+</head>
+<body>
+    <input id="tekst" placeholder="skriv inn måned" value="januar"/>
+    <button id="btnGo">Trykk</button>
+    <p id="utskrift"></p>
+</body>
+
+</html>

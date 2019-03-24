@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+    window.onload = start;
+    var rekkert1 = 40;
+    var rekkert2 =40;
+    var rbredde = 10;
+    var rhøyde = 100;
+    var ballx = 50;
+    var bally = 50;
+    var bd = 6;
+    var xv = 4;
+    var yv = 4;
+    var score1 = 0;
+    var score2 = 0;
+    var speedvalue= 2;
+    var c = document.getElementById("tegneflate");
+    var cc = c.getContext("2d");
+    cc.fillStyle ="black";
+    cc.fillRect(0,0,c.width,c.height);
+    cc.fillStyle="white";
+    cc.fillRect(0,rekkert1,rbredde,rhøyde);
+    cc.fillRect(c.width -rbredde,rekkert2,rbredde,rhøyde);
+    cc.fillRect(ballx-balld/2,bally-balld/2,balld,balld);
+    cc.fillText(score1,100,100);
+    cc.fillText(score2,c.width-100,100);
+    
+    function start() {
+        setInterval(update,1000/30); 
+        c.addEventListener("mousemove",function(e){ });
+        rekkert1 = e.clientY - ph/2;
+    }
+    function reset(){
+        ballx = c.width/2;
+        bally = c.height/2;
+        xy = -xv;
+        yv=3;
+        
+    }
+    function update() {
+        ballx += xv;
+        bally += yv;
+        if(bally < 0 && yv < 0){
+            yv = -yv;
+        }
+        if(bally > c.height && yv > 0){
+            yv =-yv;
+        }
+        if(bx < 0){
+            if(bally>rekkert1 && bally < rekkert1 + rhøyde){
+                xv = -xv;
+                dy = bally -(rekkert1 + rhøyde/2);
+                yv= dy*0.3;
+            }
+            else{
+                score2 ++;
+                reset();
+            }
+            }
+        if(bx > c.width){
+            if(bally>rekkert2 && bally < rekkert2 + rhøyde){
+                xv = -xv;
+                dy = bally -(rekkert2 + rhøyde/2);
+                yv= dy*0.3;
+            }
+            else{
+                score1 ++;
+                reset();
+            }
+            }
+        if(rekkert2 + rhøyde/2< bally){
+            rekkert2 += speedvalue;
+        }
+        else{
+            rekkert2 -= speedvalue;
+        }
+        }
+
+
+</script>
+    </head>
+<body>
+    <canvas id="tegneflate" width="680" height="480"></canvas>
+</body>
+</html>
+    

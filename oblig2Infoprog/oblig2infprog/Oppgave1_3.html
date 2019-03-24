@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oblig2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale 1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<header>
+<div class="bannerimage">
+    <h1 class="bannertitle"> Oblig 2 INF-PROG </h1>
+</div>
+    <nav>
+        <ul>
+          <li><a href="./Oppgave1_3.html">Oppgave1,2,3</a></li>
+          <li><a href="./Oppgave4.html">Oppgave 4</a></li>
+          <li><a href="./Oppgave5.html">Oppgave 5</a></li>
+          <li><a href="./Oppgave6.html">Oppgave 6</a></li>
+          <li><a href="./Oppgave7.html">Oppgave 7</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+<script>
+    window.onload = oppstart;
+        
+                 var brukerNavn = document.getElementById("txtBrukernavn"); //lager 3 variabler som blir innhenter input verdiene. 
+                 var password = document.getElementById("txtPassword");
+                 var passwordPaaNytt = document.getElementById("txtPasswordPaaNytt");
+                 
+                
+                 
+     function oppstart() {
+         
+                 
+                 brukerNavn = document.getElementById("txtBrukernavn"); //legger inn her også da de skal brukes når programmet kjøres. 
+                 password = document.getElementById("txtPassword");
+                 passwordPaaNytt = document.getElementById("txtPasswordPaaNytt");
+                 registrerKnapp = document.getElementById("submit").onclick = registrer;
+              
+          }
+         
+         function registrer () {
+             var fodselDag = document.getElementById("txtAlder").value; // innhenter verdien av inputen på teksten, i dette tilfellet fødseldatoen. 
+                var dato1 = fodselDag.toString(); // denne variablen skal gå ut ifra at fødselDag skal bli lest som en string. 
+                var dag = new Date(fodselDag2); // legger inn new Date og skriver inn veriden av fødseldatoen
+                var aarInput = parseInt(dato1.substring(0,4), 10); // innhenter spesifikke verdien av selve tallene som gjelder for måned, år pg dag. Følger amerikansk dato. 
+                var maanedInput = parseInt(dato1.substring(5,7),10); // teller fra høyre til venstre. 0,4 av 10 gjelder for Input Året.  5,7 av 10 gjelder for maaned og 8,10 av 10 gjelder for dagene. 
+                var dagInput = parseInt(dato1.substring(8,10),10); 
+                var dagensDato = new Date(); // Dagens dato
+                var fodselDag2 =  new Date(aarInput, maanedInput-1, dagInput); /*utregner verdien av år, måned og dag input fra fødseldag dette skal brukes i neste variabel for å utregne forskjell mellon dagens dato og fødseldato. */
+                var millisekundForskjell = dagensDato.valueOf() - fodselDag2.valueOf(); // verdien av dagens dato - verdien av fødseldato skal utgi et millisekundforsjkell som vi deler på antall sekunder i året. 
+                var year_age = Math.floor( millisekundForskjell/ 31556952000); /* Tar utgangspunkt i resultat av millisekundforskjellen mellom datoene og deler det på antall millisekunder i ett år. som vil da utgjøre den virkelige alderen*/
+                  
+            if(brukerNavn.value < 1){   
+                alert("Vennligst fyll inn Brukernavn");
+             }
+            else  if(password.value <1) {   
+                 alert("Vennligst lag et passord");
+             }
+            else if(password.value.length <= 5 ){ 
+                  alert("passord må minst inneholde 5 tegn");
+             } 
+            else if (passwordPaaNytt.value !== password.value) {
+                  alert("Password stemmer ikke.");
+             }
+             else if (year_age <18) {
+                 alert("Du er ikke gammel nok!");
+             }
+             else  {    
+                alert( "Takk!" + " " + brukerNavn.value + " " + "registering var vellykket!");
+             }
+             
+             
+        }
+        
+      
+        
+    
+    
+        </script>
+    
+        
+        
+        <body>
+            Brukernavn:<input type="text" id="txtBrukernavn" placeholder="Skriv inn brukernavn"/>
+            Password:<input type="password" id="txtPassword" placeholder="skriv inn et passord"/>
+                     <input type="password" id="txtPasswordPaaNytt" placeholder="Skriv inn passord på nytt"/>
+            Alder:<input type="date" id="txtAlder" placeholder="Alder"/>
+            <button id="submit">Registrer</button>
+            <p id="utskrift"></p>
+        
+        </body>
+    </section>
+    </html>

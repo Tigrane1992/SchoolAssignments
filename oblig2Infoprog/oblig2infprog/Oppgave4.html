@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Oblig2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale 1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+        <style>
+            p { 
+                font-family:orbitron;
+                font-size:50px;
+                text-align:center;
+                color:white;
+            }
+        </style>
+    </head>
+<header>
+<div class="bannerimage">
+    <h1 class="bannertitle"> Oblig 2 INF-PROG </h1>
+</div>
+    <nav>
+        <ul>
+          <li><a href="./Oppgave1_3.html">Oppgave1,2,3</a></li>
+          <li><a href="./Oppgave4.html">Oppgave 4</a></li>
+          <li><a href="./Oppgave5.html">Oppgave 5</a></li>
+          <li><a href="./Oppgave6.html">Oppgave 6</a></li>
+          <li><a href="./Oppgave7.html">Oppgave 7</a></li>
+        </ul>
+    </nav>
+    </header>
+    <script>
+    
+        window.onload = oppstart;
+        
+        function oppstart() {
+            
+            var tid = new Date(); // Bruk denne til å endre tiden på dagen for å se alle statements bruk (2018, 11, 23, timer)
+            var timer = tid.getHours(); //innhenter timene i dagen mellom 00 og 23:00. 
+         
+            
+        
+                    if((timer >= 12) && (timer <= 20)){  // dersom tiden er over 12:00 og mindre eller lik 20:00 vil bakgrunnsbilde endre seg samtidig som en utskrift med God ettermiddag vil dukke opp.
+                        document.body.style.backgroundImage = "url('ettermiddagbilde.jpg')";
+                        document.getElementById("utskrift").innerHTML = tid + " " + "God Ettermiddag!";
+                    }
+            
+                    else if ((timer <13) && (timer > 5) ) {  // else if blir brukt dersom man skal ha mer enn 1 if statement under samme kode. dersom klokkaer mellom 5 og 12
+                        document.body.style.backgroundImage = "url('morgenbilde.jpg')";
+                        document.getElementById("utskrift").innerHTML = tid + " " + "God Morgen!";
+                    }
+            
+                    else if ((timer>20) &&(timer <=23)){
+                        document.body.style.backgroundImage = "url('kveldsbilde.jpg')";
+                        document.getElementById("utskrift").innerHTML = tid + " " + "God Kveld!";
+                    }
+            
+                    else { 
+                        document.body.style.backgroundImage = "url('nattbilde.jpg')";
+                        document.getElementById("utskrift").innerHTML = tid + " " + "God Natt!";
+                    }
+        }
+        
+    </script>
+    </head>
+    <body>
+        <p id = "utskrift"></p>
+    </body>
+</html>

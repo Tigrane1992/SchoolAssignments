@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nb" >
+    <head>
+        <title>Oblig4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<body>
+    <header class="bannerhead">
+        <figure class="bannerimage">
+            <h1 class="bannertitle"> Oblig 4</h1>
+        </figure>
+            <nav class="navmenu">
+                <a href="./oppgave1oblig4.html">Op1</a>
+                <a href="./oppgave2oblig4.html">Op2</a>
+                <a href="./oppgave3oblig4.html">Op3</a>
+                <a href="./oppgave4oblig4.html">Op4</a>
+                <a href="./oppgave5oblig4lokker.html">Op5</a>
+                <a href="./oppgave6oblig4.html">Op6</a>
+                <a href="./oppgave7oblig4.html">Op7</a>
+                <a href="./oppgave8oblig4.html">Op8</a>
+                <a href="./oppgave9oblig4.html">Op9</a>
+            </nav>
+    </header>
+<script>
+    
+    window.onload = oppstart;
+    
+    var a = [2, 5, 2, 4, 7, 3, 2];
+    var b = [9, 1, 3,2,6,4,3];
+    var c = [0,0,0,0,0,0,0];
+    function oppstart(){
+        
+        for(var i=0; i< a.length;i++){ // lager for løkke som teller lengden til array a. 
+            if(a[i] >b[i]){ // dersom a element av i er større enn b elementet skal c array av element være lik a. Dette gjør at c får samme verdi som det største tallet av enten a eller b.
+                c[i] = a[i];
+            }
+            else if(b[i]>a[i]){ 
+                c[i] = b[i];
+            }
+            else{
+                c[i] = c[i]; // dersom ingen av det overnevnte er riktig opprettholder c samme verdi. 
+            }
+        }
+        document.getElementById("utskrift").innerHTML = c;
+       console.log(c); 
+    } 
+    
+</script>
+    <p id="utskrift"></p>
+</body>
+</html>

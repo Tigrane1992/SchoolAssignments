@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script>
+    window.onload = oppstart;
+
+        var arrayvisning = [];
+        var arrayteller = [];
+    
+    function oppstart() {
+    var button = document.getElementById("btnsjekk").onclick = submit;
+    }
+
+    
+    function submit() {
+        var input = document.getElementById("tekstinput").value;
+        arrayvisning = input.split(",");
+        var sum = {
+            0:0,
+            1:0,
+            2:0,
+            3:0,
+            4:0,
+            5:0,
+            6:0,
+            7:0,
+            8:0,
+            9:0,
+            
+        }
+        
+        document.getElementById("utskrift").innerHTML = arrayvisning;
+        console.log(arrayvisning);
+        arrayvisning.sort();
+        var teller = 0
+        var antall = 0
+    
+        
+            for(var i = 0; i <= arrayvisning.length; i++) {
+                if(arrayvisning[i]  !== teller) {
+                if(antall > 0) {
+                
+                document.getElementById("utskrift1").innerHTML += "tallet " + teller + "forekommer " + antall  + " ganger <br>";
+                }
+                    teller = arrayvisning[i];
+                    antall = 1;
+                }
+                    else {
+                    antall++;
+        
+                    }
+            } 
+            
+      
+    }
+    
+     
+               
+        
+            
+    
+        
+    
+    
+    
+    
+
+
+       
+
+    
+    
+    
+
+
+</script>
+</head>
+<body>
+    <input id="tekstinput" value ="1" placeholder="skriv inn tekst her"/>
+    <button id="btnsjekk">trykk meg</button>
+    <p id="utskrift"></p>
+    <p id="utskrift1"></p>
+    <p id="utskrift2"></p>
+</body>
+
+</html>
+

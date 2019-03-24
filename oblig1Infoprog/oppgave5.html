@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale 1.0">
+    <link rel type="text/css" href="./stilark.css">
+    <link rel="stylesheet" href="./stilark.css">
+    <title>OBLIG 1</title>
+  </head>
+  <h1>Oblig 1 Info-Prog</h1>
+<header>
+  <nav>
+    <ul>
+      <li><a href="oppgave1.html">Oppgave 1</a></li>
+      <li><a href="oppgave2.html">Oppgave 2</a></li>
+      <li><a href="oppgave3.html">Oppgave 3</a></li>
+      <li><a href="oppgave4.html">Oppgave 4</a></li>
+      <li><a href="oppgave5.html">Oppgave 5</a></li>
+      <li><a href="oppgave6.html">Oppgave 6</a></li>
+    </ul>
+  </nav>
+</header>
+      <script>
+            window.onload = oppstart;
+            var tall = 1;
+
+            function oppstart (){
+                setInterval(tegn,100);
+
+            }
+            
+            
+
+        
+            
+            function tegn() {
+                var ctx = document.getElementById("tegneflate").getContext("2d");
+                ctx.beginPath();
+                ctx.moveTo(0,200);
+                ctx.lineTo(200,0)
+                ctx.lineTo(400,200);
+                ctx.lineTo(0,200);
+                ctx.stroke();
+                
+                
+                ctx.beginPath();
+                ctx.rect(10,200,380,400); 
+                ctx.fillRect(10,200,380,400);
+                ctx.fillStyle = "Red";
+                ctx.fill();
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.rect(50,250,50,100);
+                ctx.fillRect(50,250,50,100);
+                ctx.fillStyle="White";
+                ctx.fill();
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.rect(350,250,-90,250);
+                ctx.fillStyle="Grey";
+                ctx.fill();
+                ctx.stroke;
+                
+                ctx.beginPath();
+                ctx.moveTo(50,300);
+                ctx.lineTo(100,300);
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.moveTo(75,350);
+                ctx.lineTo(75,250);
+                ctx.stroke();
+            
+                
+                
+               
+                
+                
+                
+
+            }
+      </script>
+      <style>
+          #tegneflate {
+              border-style:solid;
+
+          }
+      </style>
+    </head>
+        <body>
+            <canvas id="tegneflate" width="400" height="400"></canvas>
+        </body>
+        <footer>
+            <ul>
+                <li>2018</li>
+                <li>Mattia Lerario</li>
+                <li>mattial@hiof.no</li>
+            </ul>
+        </footer>
+        <footer>
+            <ul>
+                <li>2018</li>
+                <li>Mattia Lerario</li>
+                <li>mattial@hiof.no</li>
+            </ul>
+        </footer>
+</html>

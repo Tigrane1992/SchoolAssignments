@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script>
+window.onload = oppstart;
+//var tallarr = ["0","1","2","3","4","5","6","7","8","9","10","11","12"]
+var tallarr = [1,5,3,2,8,10,20,15,33,2,2 ]
+
+function oppstart() {
+
+        //tallfølge
+       for(var a=0; a < tallarr.length;a++) {
+       document.getElementById("utskrift1").innerHTML += tallarr[a] + " ";  
+       } 
+        //baklengs
+       for(var b = tallarr.length - 1; b >= 0; b--){
+           document.getElementById("utskrift2").innerHTML += tallarr[b] + " ";
+       }
+        //annehver
+       for(var c= 0; c < tallarr.length; c+=2) {
+          document.getElementById("utskrift3").innerHTML += tallarr[c] +" ";
+       }
+        //mindre enn 10
+       for(var d = 0; tallarr[10] >= d; d++) { 
+            document.getElementById("utskrift4").innerHTML += tallarr[d] +" ";
+       }
+        //partall
+       for (var e = 0; e < tallarr.length; e++) {
+            if(tallarr[e] % 2 === 0) {
+                document.getElementById("utskrift5").innerHTML += tallarr[e] +" ";
+            }
+       }
+        //summ av tall
+        function summ(total, num) {
+            return total + Math.round(num);
+        
+        }
+        document.getElementById("utskrift6").innerHTML = tallarr.reduce(summ,0);
+    
+         //antall elementer
+        document.getElementById("utskrift7").innerHTML = tallarr.length;
+    
+        //gjennomsnitt i array
+    
+        document.getElementById("utskrift8").innerHTML = tallarr.reduce(summ,0) / tallarr.length;
+        
+        //minimun verdi i tallrekken. 
+        document.getElementById("utskrift9").innerHTML = Math.min(...tallarr);
+        // bestemt verdi i tallrekken. 
+        
+        for(var f =0; f < tallarr.length; f++) {
+            if(tallarr[f] === 3){
+                document.getElementById("utskrift10").innerHTML = tallarr[f];
+            }
+            var antallelementer = 0;
+            for(var h =0; h < tallarr.length; h++) {
+            if(tallarr[h] === 2) {
+                antallelementer++;
+            }
+            document.getElementById("utskrift11").innerHTML = antallelementer;
+        }
+        }
+        
+    
+   
+}
+    
+        
+
+
+</script>
+</head>
+<body>
+    <p id="utskrift1"></p>
+    <p id="utskrift2"></p>
+    <p id="utskrift3"></p>
+    <p id="utskrift4"></p>
+    <p id="utskrift5"></p>
+    <p id="utskrift6"></p>
+    <p id="utskrift7"></p>
+    <p id="utskrift8"></p>
+    <p id="utskrift9"></p>
+    <p id="utskrift10"></p>
+    <p id="utskrift11"></p>
+</body>
+
+</html>

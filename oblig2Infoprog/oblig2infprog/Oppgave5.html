@@ -1,0 +1,92 @@
+<<!DOCTYPE html>
+<html>
+    <head>
+        <title> Oblig2</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial scale 1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<header>
+<div class="bannerimage">
+    <h1 class="bannertitle"> Oblig 2 INF-PROG </h1>
+</div>
+    <nav>
+        <ul>
+          <li><a href="./Oppgave1_3.html">Oppgave1,2,3</a></li>
+          <li><a href="./Oppgave4.html">Oppgave 4</a></li>
+          <li><a href="./Oppgave5.html">Oppgave 5</a></li>
+          <li><a href="./Oppgave6.html">Oppgave 6</a></li>
+          <li><a href="./Oppgave7.html">Oppgave 7</a></li>
+        </ul>
+    </nav>
+    </header>
+<script>
+    
+    window.onload = oppstart;
+    
+    function oppstart() {
+        document.getElementById("btnSjekk").onclick = sjekk;
+        var alder = parseInt(document.getElementById("txtAlder").value);
+        var navn = parseInt(document.getElementById("txtNavn").value.length);
+        var høyde = parseInt(document.getElementById("txtHøyde").value);
+        var kjonn = document.getElementById("kjonnInput").value;
+        var spaadomGutter = Math.floor(navn * alder - høyde); /* lager en utregning for spaadommen som skal gjelde for gutter og jenter i linje 16 Bruker Math.floor for å starte utregningen */
+        var spaadomJenter = Math.floor(alder * høyde - 3); 
+      
+    }
+    
+    
+    function sjekk() { //funksjonen som starter prosessen ved å trykke på knappen btnSjekk. 
+        alder = parseInt(document.getElementById("txtAlder").value); //bruker parseInt og .value samt .length på navn variabel da vi ønsker selve verdiene av teksten og ikke selve teksten men lengden. 
+        navn = parseInt(document.getElementById("txtNavn").value.length); 
+        høyde = parseInt(document.getElementById("txtHøyde").value);
+        kjonn = document.getElementById("kjonnInput").value;
+        spaadomGutter = Math.floor(navn * alder - høyde);
+        spaadomJenter = Math.floor(alder * høyde - 3);
+        
+        
+                if((spaadomGutter % 2 === 0) && (kjonn === "Gutt")){    // dersom remainder av utregningen er lik 0 vil vi få disse utfallene                       
+                    document.getElementById("utskrift").innerHTML ="Det vil gå deg godt her i verden... " + " " + "For at spådommen skal gå i oppfyllelse, må du betale inn 100 kr til følgende kontonummer: 1234.12.12345";
+                }
+        
+                else if((spaadomJenter % 2  === 0)  && (kjonn === "Jente")) { 
+                    
+                document.getElementById("utskrift").innerHTML="Det vil gå deg godt her i verden... " + " " + "For at spådommen skal gå i oppfyllelse, må du betale inn 100 kr til følgende kontonummer: 1234.12.12345"
+                    
+                    
+                }
+        
+               else{ // dersom remainder er annet enn 0 vil vi få dette utfallet. 
+                    document.getElementById("utskrift").innerHTML="Stakkars deg! Alt kommer til å gå deg galt..." + " " + "For at spådommen ikke skal gå i oppfyllelse, må du betale inn 100 kr til følgende kontonummer: 1234.12.12345";
+                } 
+                
+                
+        
+    }
+    
+    
+    </script>
+
+
+
+
+
+
+</head>
+   <body>
+    Navn:<input type="text" id="txtNavn"/><br>
+    Alder:<input type="text" id="txtAlder" /><br>
+    Høyde:<input type ="text" id="txtHøyde"/><br>
+      Kjønn:<select id="kjonnInput"> 
+       <option type="text">Gutt</option>
+       <option type="text">Jente</option> 
+       </select> <!-- Bruker en selektor hvir vi legger inn 2 opsjoner som skal være da Gutt og jente disse vil vises som en nedtrekksliste på selve siden -->
+       
+    <button type="button" id="btnSjekk">Spådom</button>
+    <p id="utskrift"></p>
+    
+    </body> 
+    
+    
+    </html>

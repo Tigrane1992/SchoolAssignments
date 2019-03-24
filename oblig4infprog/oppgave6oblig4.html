@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nb" >
+    <head>
+        <title>Oblig4</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel type="text/css" href="./stilark.css">
+        <link rel="stylesheet" href="./stilark.css">
+    </head>
+<body>
+    <header class="bannerhead">
+        <figure class="bannerimage">
+            <h1 class="bannertitle"> Oblig 4</h1>
+        </figure>
+            <nav class="navmenu">
+                <a href="./oppgave1oblig4.html">Op1</a>
+                <a href="./oppgave2oblig4.html">Op2</a>
+                <a href="./oppgave3oblig4.html">Op3</a>
+                <a href="./oppgave4oblig4.html">Op4</a>
+                <a href="./oppgave5oblig4lokker.html">Op5</a>
+                <a href="./oppgave6oblig4.html">Op6</a>
+                <a href="./oppgave7oblig4.html">Op7</a>
+                <a href="./oppgave8oblig4.html">Op8</a>
+                <a href="./oppgave9oblig4.html">Op9</a>
+            </nav>
+    </header>
+<script>
+    
+    window.onload = oppstart;
+    var array = [3,24,7,10,42,50,4];
+    
+    function oppstart(){
+        var oddetall = 0 // lager 2 tellere en for partall og en for oddetall
+        var partall = 0
+        for(var i = 0; i < array.length; i++){ // dersom det er et partall skal teller partall plusses på med 1. 
+            
+            if(array[i] % 2 === 0){
+                partall++;  
+            }
+            else if(array[i] % 2 !== 0){ //Dersom det er et oddetall skal teller oddetall plusses på med en.
+                oddetall++;
+            }    
+        }
+        document.getElementById("utskrift1").innerHTML = "oddetall: " + oddetall; //utskrift av antall oddetall.
+        document.getElementById("utskrift2").innerHTML = "partall: " + partall; //utskrift av anrtall partall.
+    }   
+</script>
+    <p id="utskrift1"></p>
+      <p id="utskrift2"></p>
+</body>
+</html>

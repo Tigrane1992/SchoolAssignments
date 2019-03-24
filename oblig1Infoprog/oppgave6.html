@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale 1.0">
+    <link rel type="text/css" href="./stilark.css">
+    <link rel="stylesheet" href="./stilark.css">
+    <title>OBLIG 1</title>
+  </head>
+  <h1>Oblig 1 Info-Prog</h1>
+<header>
+  <nav>
+    <ul>
+      <li><a href="oppgave1.html">Oppgave 1</a></li>
+      <li><a href="oppgave2.html">Oppgave 2</a></li>
+      <li><a href="oppgave3.html">Oppgave 3</a></li>
+      <li><a href="oppgave4.html">Oppgave 4</a></li>
+      <li><a href="oppgave5.html">Oppgave 5</a></li>
+      <li><a href="oppgave6.html">Oppgave 6</a></li>
+    </ul>
+  </nav>
+</header>
+    <script>
+            window.onload = oppstart;
+        
+         var trykket= 1;
+
+            function oppstart () {
+                
+                
+		        var antall = document.getElementById("txtAntall") ;
+                var vare = document.getElementById("txtVare") ;
+                var btnLeggTil = document.getElementById("btnLeggTil");
+                document.getElementById("btnLeggTil").onclick = trykket ;
+                
+                
+                
+            
+        
+            function addVare() {
+                
+                var resultat = (antall.value + vare.value); 
+                var liste = document.createElement("li");
+                liste.innerHTML  = resultat;
+                listeA.appendChild(liste);
+                document.getElementById("antTrykket").innerHTML = trykket;
+                trykket++;
+                 
+            }
+                
+                btnLeggTil.onclick = addVare;
+                
+                
+                    
+                    
+                
+        }
+            
+        
+        
+   
+        
+                
+            
+    
+    </script>
+</head>
+<body>
+    Antall:<input type="text" id="txtAntall"/><br /> 
+    Vare:<input type="text" id="txtVare"/><br />
+
+    <button type="button" id="btnLeggTil">Legg Til</button>  
+    
+    <ul id="listeA">Varer:</ul>
+    <p id="antTrykket"> Varer i Kurv:</p>
+    
+    </body>
+    <footer>
+        <ul>
+            <li>2018</li>
+            <li>Mattia Lerario</li>
+            <li>mattial@hiof.no</li>
+        </ul>
+    </footer>
+ 
+</html>
+

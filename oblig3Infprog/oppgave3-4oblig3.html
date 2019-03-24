@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script>
+window.onload = oppstart;
+
+function oppstart() {
+
+ var array = ["Oliver","Magnus","Sindre","Robert","Mattia"]; //array med navn
+    var array2 = []; // tom ny array her legges inn alle nye verdier som ender opp i utskriften. 
+    
+    do {
+        array2[array2.length] = array.splice(Math.floor(Math.random()* array.length),1); /* tar utgangspunkt i lengden på array 2 og adderer ett element i array 1 og samtidig sletter elementet slik at det ikke kan bli gjenvalgt. */
+    }
+    while (array2.length < 3); //sålenge lengden av array2 er under 3 vil øvre kode kjøres om igjen inntill 3 elementer er valgt ut. 
+      document.getElementById("utskrift").innerHTML = array2;   //skriver ut arrayen. 
+    }
+        
+         
+    
+             
+        
+    
+    
+
+</script>
+</head>
+<body>
+    <p id="utskrift"></p>
+</body>
+
+</html>
